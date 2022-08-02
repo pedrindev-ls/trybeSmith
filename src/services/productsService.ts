@@ -13,7 +13,6 @@ class ProductsService {
   addNewProduct = async (items: AddProducts): Promise<AddProducts> => {
     const { name, amount } = items;
     const item = await this.productsModel.addNew(name, amount);
-    console.log(item);
     
     return item;
   };
