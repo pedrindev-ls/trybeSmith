@@ -1,8 +1,10 @@
 import jwt from 'jsonwebtoken';
+import { AddUser } from '../interfaces/userInterface';
 
 const jwtService = {
-  createToken: (username: string, classe: string, level: number, password: string) => {
-    const token = jwt.sign({ username, classe, level, password }, 'segredo');
+  createToken: (item: AddUser) => {
+    const { username, classe, level } = item;
+    const token = jwt.sign({ username, classe, level }, 'segredo');
     return token;
   },
 };
